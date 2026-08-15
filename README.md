@@ -6,23 +6,24 @@ el estado, **niveles como datos**, memoria **ME/** para la IA orquestadora y
 **herramientas de assets** integradas para generar sprites, escenarios y
 sonido sin depender de nada externo de pago.
 
-## Ramas
+## Estructura: una sola rama
 
-`main` es la base genérica (jugador 8 direcciones + HUD) y ya integra el
-**núcleo transversal de level design**: los niveles son datos (`.tres` +
-`LevelData` + `LevelBuilder` genérico + `LevelStore` con Flux), listo para
-usarse en CUALQUIER género. El level design no es un género: es una forma de
-trabajar que todas las ramas heredan desde la base.
+El repo tiene UNA sola rama: `main`. Es la base genérica (jugador 8
+direcciones + HUD) e integra el **núcleo transversal de level design**: los
+niveles son datos (`.tres` + `LevelData` + `LevelBuilder` genérico +
+`LevelStore` con Flux), listo para usarse en CUALQUIER género. El level
+design no es un género: es una forma de trabajar heredada desde la base.
 
-- `platformer` — ejemplo 2D de plataformas: salto con coyote time y jump buffer
-
-Por ahora solo existen `main` y `platformer`. El resto de géneros (top-down,
-shooter, roguelike, puzzle) se añaden bajo demanda como ramas; sus starters se
-conservan en la historia del repo.
+**No hay ramas por género ni generador por script.** El género se configura
+**a demanda**: el asistente del proyecto (la IA de orquestación que vive en
+`ME/`, ver sección "IA orquestadora") configura la base según lo que pida el
+desarrollador — plataformero, top-down, shooter, roguelike, puzzle o level
+design. Los starters de referencia de cada género se conservan en la
+historia del repo (`1e8ed5a:starters/<genero>/`) y el asistente los aplica
+cuando hace falta.
 
 ```bash
-git clone -b platformer https://github.com/Cassers/Games-Templates.git
-git clone https://github.com/Cassers/Games-Templates.git              # base
+git clone https://github.com/Cassers/Games-Templates.git
 ```
 
 ## Requisitos
@@ -68,6 +69,21 @@ Todos los proyectos generados incluyen un orquestador de IA documentado:
 `CLAUDE.md`/`AGENTS.md`/`GEMINI.md` (idénticos entre sí) + la carpeta `ME/`
 con su identidad, memorias e índice de habilidades, y un bootstrap de
 configuración por proyecto. Ver la sección "El proyecto" de `CLAUDE.md`.
+
+### Configurar el género con el asistente
+
+Al abrir un clon con la IA, el asistente ejecuta su bootstrap (`ME/`) y luego
+configura la base según lo que quiera el desarrollador:
+
+1. **Cuenta qué quieres construir** (plataformero, top-down, shooter,
+   roguelike, puzzle, level design…). No hay ramas ni scripts que elegir.
+2. El asistente aplica el **starter de referencia** del género desde la
+   historia del repo (`git show 1e8ed5a:starters/<genero>/…`), o construye
+   las escenas equivalentes, y ajusta `project.godot` (nombre, tema, input).
+3. Verifica con el smoke headless y te dice QUÉ / CÓMO / VERIFICACIÓN.
+
+Ese es el flujo: la base es la misma para todos, y el género es una
+configuración que la IA hace contigo, no una rama que clonas.
 
 ## Arquitectura (resumen)
 

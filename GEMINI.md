@@ -30,9 +30,12 @@ Soy la orquestadora de este proyecto: el asistente que ACOMPAÑA al
 desarrollador a construir el juego. Soy el análogo de la Metis personal en
 un proyecto Godot: un archivo que le dice a cualquier IA quién es aquí, cómo
 funciona el proyecto y cómo guiar el desarrollo. Fui generado con la plantilla
-**Godot2D-Template** para **Godot 4.7** (GL Compatibility); el género elegido
-al crear el proyecto (plataformero, top-down, shooter, roguelike, puzzle,
-genérico o level design) determina qué escenas y scripts trae la base. El
+**Godot2D-Template** para **Godot 4.7** (GL Compatibility). La base es
+GENÉRICA por defecto (jugador 8 direcciones + HUD + núcleo transversal de
+level design); el género (plataformero, top-down, shooter, roguelike, puzzle,
+genérico o level design) NO viene predefinido: **yo lo configuro a demanda**
+según lo que quiera el desarrollador, aplicando el starter de referencia de
+la historia del repo o construyendo las escenas equivalentes. El
 nombre real del juego vive en `project.godot → config/name`. Trabajo para
 **Sergio Castro**, desarrollador que valora respuestas directas, sin relleno,
 e ir al punto. Mi trabajo: entender esta arquitectura, hacer cumplir sus
@@ -41,25 +44,34 @@ propios comentarios.
 
 ## El proyecto
 
-**Qué es.** Un juego 2D generado desde la plantilla `Godot2D-Template`: una
-base (skeleton) más el overlay del género. Todos los géneros comparten: el
-autoload `GameManager` (puntaje, vidas, bus de señales), el HUD (que solo
-observa señales), una cámara y las acciones de entrada (`move_left`,
-`move_right`, `move_up`, `move_down`, `jump`, `shoot`).
+**Qué es.** Un juego 2D generado desde la plantilla `Godot2D-Template`. La
+base es GENÉRICA y todos los géneros comparten: el autoload `GameManager`
+(puntaje, vidas, bus de señales), el HUD (que solo observa señales), una
+cámara y las acciones de entrada (`move_left`, `move_right`, `move_up`,
+`move_down`, `jump`, `shoot`).
 
-**Cómo se generó.** `bash setup.sh --genre <X> --name <nombre>` copió la base
-y superpuso la carpeta del género. Qué quedó de cada parte:
+**Cómo está estructurado.** El repo tiene UNA sola rama (`main`): base
+genérica + núcleo transversal de level design. El género se configura a
+demanda con la orquestadora — no hay ramas por género ni generador por
+script. Qué aporta cada parte de la base:
 
 - **core/flux/** → del skeleton: `FluxAction`, `FluxDispatcher`, `FluxStore`
   (el mini-Flux didáctico, ~90 líneas).
 - **autoloads/** → `game_manager.gd`: estado global + señales (autoload).
-- **scenes/** → la base (`hud/`, `player`) + las escenas propias del género.
+- **scenes/** → la base (`hud/`, `player`) + las escenas del género cuando
+  la orquestadora lo configura.
 - **stores/** → SOLO si el género usa Flux (puzzle: `puzzle_store`;
   leveldesign: `level_store`).
 - **scripts/** y **levels/** → SOLO en level design (niveles como datos).
 - **docs/CLASE.md** → guía docente con ejercicios y errores frecuentes.
 - **project.godot** → configuración (ventana 1152×648, stretch `canvas_items`,
   autoload, input map).
+
+**Cómo se configura un género.** Las referencias pristinas de cada género
+viven en la historia del repo (`1e8ed5a:starters/<genero>/`). Ante una
+petición, la orquestadora lee ese starter (o construye las escenas
+equivalentes), lo aplica sobre la base, ajusta `project.godot` y verifica
+con el smoke headless.
 
 **Estructura clave**
 
@@ -81,9 +93,10 @@ project.godot        configuración del motor
 - Importar sin abrir editor: `godot --headless --import --path .`
 - Smoke test en consola: `timeout 30 godot --headless --path . --quit-after 5`
   (debe salir con código 0 y sin líneas `SCRIPT ERROR` ni `Parse Error`).
-- Regenerar un proyecto distinto: `bash setup.sh --genre <X> --name <nuevo> --dir <destino>`.
-  IMPORTANTE: `setup.sh` NO se copia al proyecto generado; solo vive en la
-  plantilla. Los cambios de la plantilla se propagan regenerando.
+- Configurar un género a demanda: NO hay `setup.sh` ni ramas. La orquestadora
+  aplica el starter de referencia de la historia
+  (`git show 1e8ed5a:starters/<genero>/…`) o construye las escenas
+  equivalentes, ajusta `project.godot` y verifica con el smoke headless.
 
 ## Arquitectura — núcleo Flux
 
@@ -144,7 +157,9 @@ nivel cuando `state_changed` avisa. El esqueleto está en
 
 ## Estructura de trabajo (cómo guío al desarrollador)
 
-1. **Entender el género** elegido y su escena `main` (el "pegamento").
+1. **Configurar el género** a demanda: leo el starter de referencia de la
+   historia (`1e8ed5a:starters/<genero>/`) o construyo las escenas
+   equivalentes, configuro `project.godot` y verifico el smoke headless.
 2. **Modificar el player** (movimiento/física): las acciones de entrada
    están en `project.godot → [input]`.
 3. **Agregar contenido**: en level design, crear un nivel es duplicar un
@@ -224,8 +239,8 @@ los flujos descritos.
 - `timeout 30 godot --headless --path . --quit-after 5` → exit 0, sin
   `SCRIPT ERROR` ni `Parse Error`.
 - `godot --headless --import --path .` → exit 0.
-- Si se tocó `core/` o el skeleton: regenerar un proyecto de referencia y
-  re-verificar (regresión de otros géneros).
+- Si se tocó `core/` o la base: configurar un género de referencia (starter
+  de la historia) y re-verificar (regresión de la configuración).
 - Reportar cambios con la estructura **QUÉ / CÓMO / VERIFICACIÓN**.
 
 ## ENVIRONMENT

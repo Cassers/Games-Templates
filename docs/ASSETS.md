@@ -13,8 +13,9 @@ opciones pesadas disponibles bajo demanda. Todo gratis.
   plan (regla del proyecto: explicar antes de tocar producción).
 - Las herramientas VIVEN en `.tools/` del repo, pero `node_modules` NO se
   commitea: un clonador restaura las dependencias con `pnpm install` dentro de
-  `.tools/pollinations-mcp` (y `.tools/sfxr`). `setup.sh` copia todo el
-  directorio al proyecto generado, así que cada proyecto hereda las tools.
+  `.tools/pollinations-mcp` (y `.tools/sfxr`). El repo es la base para todos
+  los géneros (no hay generador por script): el asistente del proyecto
+  configura el género a demanda y las tools heredan tal cual.
 
 ## 1. Pollinations MCP — sprites, escenarios y audio (instalado)
 

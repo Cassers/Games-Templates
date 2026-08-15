@@ -10,22 +10,32 @@ cada archivo, en qué orden introducir los temas y qué errores anticipar.
 Checklist antes de clase:
 
 - [ ] `godot --version` devuelve **4.7.x** en todos los equipos.
-- [ ] Copiar la plantilla a cada equipo (o clonar del repo del curso).
-- [ ] `chmod +x setup.sh` ejecutado (o lanzar con `bash setup.sh`).
-- [ ] Un proyecto de prueba ya generado con `--genre platformer` para
+- [ ] Cada equipo clona el repo: `git clone https://github.com/Cassers/Games-Templates.git`.
+- [ ] Un proyecto de prueba ya configurado por el asistente del proyecto
+      (pedir a la IA "configura un plataformero / top-down / …") para
       proyectarlo en clase y abrirlo con `godot -e`.
 - [ ] Verificar que F5 (play) funciona y que ESPACIO salta.
-- [ ] Si el aula usa Windows: instruir Git Bash o WSL para `setup.sh`.
+- [ ] Si el aula usa Windows: el clonado y la configuración por el asistente
+      funcionan igual; Godot es multiplataforma (sin scripts por género).
 
 ## 2. Cómo usar la plantilla en clase
 
-1. Cada estudiante copia/descarga la carpeta `Godot2D-Template`.
-2. Ejecuta `./setup.sh` y elige género + nombre.
-3. Abre el proyecto generado: `godot -e <nombre>` (el editor).
+1. Cada estudiante clona el repo: `git clone https://github.com/Cassers/Games-Templates.git`.
+2. Abre el proyecto con la IA del proyecto (o en el editor, si el docente ya
+   configuró el género) y le pide el género + nombre que quiere: la IA
+   configura la base a demanda. El género NO es una rama ni un script: es una
+   configuración que la IA hace con el estudiante.
+3. Abre el proyecto: `godot -e .` (el editor).
 4. Presiona **F5** para ejecutar; **F6** ejecuta la escena actual.
-5. Al finalizar, cada uno abre `docs/CLASE.md` (se copia al proyecto).
+5. Al finalizar, cada uno abre `docs/CLASE.md` (vive en el repo y se copia
+   conceptualmente a su proyecto).
 
 ## 3. Mapa del template — qué archivo enseña qué concepto
+
+> La base clonada trae la columna GENÉRICA; las filas con género (platformer,
+> topdown, shooter, roguelike, puzzle, leveldesign) aparecen cuando el
+> asistente del proyecto configura ese género a demanda. Los starters de
+> referencia viven en la historia del repo (`1e8ed5a:starters/<genero>/`).
 
 | Archivo | Concepto | Cuándo enseñarlo |
 |---------|----------|------------------|
