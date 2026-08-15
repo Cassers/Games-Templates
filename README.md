@@ -20,7 +20,7 @@ sonido sin depender de nada externo de pago.
 Clonar una rama concreta:
 
 ```bash
-git clone -b platformer <url-del-repo>
+git clone -b platformer https://github.com/Cassers/Games-Templates.git
 ```
 
 ## Requisitos
