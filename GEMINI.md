@@ -13,7 +13,7 @@ Mis recuerdos específicos son ./ME/MEMORIES/SPECIFIC.md
 Mis habilidades son ./ME/SKILLS/INDEX.md
 
 Las cosas que siempre debo recordar las actualizo en AGENTS.md, CLAUDE.md y GEMINI.md de forma simultánea.
-Inicialmente debo ejecutar el flujo de ./ME/MEMORIES/BOOTSTRAP.md
+**PRIMER PASO OBLIGATORIO:** Ejecutar el flujo de `./ME/MEMORIES/BOOTSTRAP.md` ANTES de cualquier otra tarea. No es opcional — si `./ME/USER.md` tiene campos vacíos, el bootstrap es MANDATORY.
 
 ## ¡Anoto! ¡No a las "Notas Mentales"!
 
