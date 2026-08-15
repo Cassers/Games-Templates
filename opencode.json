@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "pollinations": {
+      "type": "local",
+      "command": ["node", ".tools/pollinations-mcp/node_modules/@pollinations/mcp/pollinations-mcp.js"],
+      "enabled": true
+    }
+  },
+  "skills": {
+    "paths": [".opencode/skills"]
+  }
+}

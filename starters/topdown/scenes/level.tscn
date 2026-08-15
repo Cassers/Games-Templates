@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://metis_topdown_level_01"]
+
+[sub_resource type="RectangleShape2D" id="Wall_side_shape"]
+size = Vector2(40, 600)
+
+[sub_resource type="RectangleShape2D" id="Wall_top_shape"]
+size = Vector2(1000, 40)
+
+[node name="Level" type="Node2D"]
+
+[node name="Fondo" type="ColorRect" parent="."]
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+color = Color(0.18, 0.18, 0.22, 1)
+
+[node name="ParedIzquierda" type="StaticBody2D" parent="."]
+position = Vector2(-480, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedIzquierda"]
+shape = SubResource("Wall_side_shape")
+
+[node name="Visual" type="ColorRect" parent="ParedIzquierda"]
+offset_left = -20.0
+offset_top = -300.0
+offset_right = 20.0
+offset_bottom = 300.0
+color = Color(0.45, 0.45, 0.55, 1)
+
+[node name="ParedDerecha" type="StaticBody2D" parent="."]
+position = Vector2(480, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDerecha"]
+shape = SubResource("Wall_side_shape")
+
+[node name="Visual" type="ColorRect" parent="ParedDerecha"]
+offset_left = -20.0
+offset_top = -300.0
+offset_right = 20.0
+offset_bottom = 300.0
+color = Color(0.45, 0.45, 0.55, 1)
+
+[node name="ParedArriba" type="StaticBody2D" parent="."]
+position = Vector2(0, -280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedArriba"]
+shape = SubResource("Wall_top_shape")
+
+[node name="Visual" type="ColorRect" parent="ParedArriba"]
+offset_left = -500.0
+offset_top = -20.0
+offset_right = 500.0
+offset_bottom = 20.0
+color = Color(0.45, 0.45, 0.55, 1)
+
+[node name="ParedAbajo" type="StaticBody2D" parent="."]
+position = Vector2(0, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedAbajo"]
+shape = SubResource("Wall_top_shape")
+
+[node name="Visual" type="ColorRect" parent="ParedAbajo"]
+offset_left = -500.0
+offset_top = -20.0
+offset_right = 500.0
+offset_bottom = 20.0
+color = Color(0.45, 0.45, 0.55, 1)

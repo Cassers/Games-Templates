@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://metis_level_store_01"]
+
+[ext_resource type="Script" path="res://stores/level_store.gd" id="1_script"]
+[ext_resource type="Resource" path="res://levels/level_01.tres" id="2_l1"]
+[ext_resource type="Resource" path="res://levels/level_02.tres" id="3_l2"]
+[ext_resource type="Resource" path="res://levels/level_03.tres" id="4_l3"]
+
+[resource]
+script = ExtResource("1_script")
+levels = [ExtResource("2_l1"), ExtResource("3_l2"), ExtResource("4_l3")]

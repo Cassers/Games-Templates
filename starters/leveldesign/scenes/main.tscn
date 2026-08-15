@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://metis_leveldesign_main_01"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/hud/hud.tscn" id="3_hud"]
+[ext_resource type="Resource" path="res://stores/level_store.tres" id="4_store"]
+[ext_resource type="Script" path="res://scripts/level_builder.gd" id="5_builder"]
+[ext_resource type="Script" path="res://core/flux/flux_action.gd" id="6_action"]
+[ext_resource type="Script" path="res://core/flux/flux_dispatcher.gd" id="7_dispatcher"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+level_store = ExtResource("4_store")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 300)
+limit_left = 0
+limit_top = -400
+limit_right = 1152
+limit_bottom = 648
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+unique_name_in_owner = true
+position = Vector2(64, 536)
+
+[node name="LevelRoot" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="LevelBuilder" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_builder")
+
+[node name="LevelDispatcher" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_dispatcher")
+
+[node name="CompleteLevelAction" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_action")
+action_name = "complete_level"
+
+[node name="RestartLevelAction" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_action")
+action_name = "restart_level"
+
+[node name="UIButtons" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIButtons"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -230.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="NextButton" type="Button" parent="UIButtons/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Siguiente nivel"
+
+[node name="RestartButton" type="Button" parent="UIButtons/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reiniciar nivel"
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+unique_name_in_owner = true

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://metis_level_02_01"]
+
+[ext_resource type="Script" path="res://scripts/level_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+level_name = "Nivel 2: Saltos"
+player_spawn = Vector2(64, 536)
+goal_position = Vector2(960, 396)
+platforms = [{
+"position": Vector2(240, 580),
+"size": Vector2(520, 40)
+}, {
+"position": Vector2(645, 580),
+"size": Vector2(120, 40)
+}, {
+"position": Vector2(1040, 580),
+"size": Vector2(500, 40)
+}, {
+"position": Vector2(840, 510),
+"size": Vector2(180, 40)
+}, {
+"position": Vector2(960, 440),
+"size": Vector2(180, 40)
+}]

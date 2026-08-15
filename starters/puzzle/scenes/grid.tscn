@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://metis_puzzle_grid_flux_01"]
+
+[ext_resource type="Script" path="res://scenes/grid.gd" id="1_grid"]
+[ext_resource type="Script" path="res://core/flux/flux_action.gd" id="2_action"]
+[ext_resource type="Script" path="res://core/flux/flux_dispatcher.gd" id="3_dispatcher"]
+[ext_resource type="Resource" path="res://stores/puzzle_store.tres" id="4_store"]
+
+[node name="Grid" type="Node2D"]
+script = ExtResource("1_grid")
+puzzle_store = ExtResource("4_store")
+
+[node name="PuzzleAction" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_action")
+action_name = "toggle_cell"
+
+[node name="PuzzleDispatcher" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_dispatcher")
+
+[node name="ResetAction" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_action")
+action_name = "reset"

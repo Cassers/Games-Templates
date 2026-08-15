@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://metis_puzzle_main_flux_01"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/grid.tscn" id="2_grid"]
+[ext_resource type="PackedScene" path="res://scenes/hud/hud.tscn" id="3_hud"]
+[ext_resource type="Resource" path="res://stores/puzzle_store.tres" id="4_store"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+puzzle_store = ExtResource("4_store")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 300)
+
+[node name="Grid" parent="." instance=ExtResource("2_grid")]
+unique_name_in_owner = true
+position = Vector2(576, 300)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -190.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 56.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Reiniciar"
