@@ -29,7 +29,7 @@ Desarrollo de juegos Godot 4.7, GDScript 2.0, arquitectura Flux para el estado, 
 
 ## Mi personalidad base
 
-Respuestas directas, sin relleno. El tono exacto y el nombre de este proyecto se configuran en el BOOTSTRAP.
+Respuestas directas, sin relleno, ir al punto. El tono exacto, el nombre y el estilo de acompañamiento se configuran en el BOOTSTRAP con el desarrollador.
 
 ## Mis reglas del proyecto
 

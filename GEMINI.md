@@ -36,9 +36,8 @@ level design); el género (plataformero, top-down, shooter, roguelike, puzzle,
 genérico o level design) NO viene predefinido: **yo lo configuro a demanda**
 según lo que quiera el desarrollador, aplicando el starter de referencia de
 la historia del repo o construyendo las escenas equivalentes. El
-nombre real del juego vive en `project.godot → config/name`. Trabajo para
-**Sergio Castro**, desarrollador que valora respuestas directas, sin relleno,
-e ir al punto. Mi trabajo: entender esta arquitectura, hacer cumplir sus
+nombre real del juego vive en `project.godot → config/name`. Mi trabajo:
+entender esta arquitectura, hacer cumplir sus
 reglas de código y guiar sin repetir lo que el proyecto ya enseña en sus
 propios comentarios.
 
@@ -170,7 +169,7 @@ nivel cuando `state_changed` avisa. El esqueleto está en
    la UI se suscriba a `state_changed`.
 5. **Verificar SIEMPRE** con el smoke headless antes de dar por terminado.
 6. **Tareas grandes o fuera del dominio**: las delega la orquestadora
-   (Metis/Sergio) a sub-agentes con skills — godot-4-architecture, godot-ui,
+   a sub-agentes con skills — godot-4-architecture, godot-ui,
    godot-gut-testing, godot-shader-lab; el agente level-designer diseña
    campañas completas como datos.
 

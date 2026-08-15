@@ -23,7 +23,7 @@ opciones pesadas disponibles bajo demanda. Todo gratis.
 |---|---|
 | Paquete | `@pollinations/mcp` v2.4.0 (oficial, MIT) |
 | Instalación | `.tools/pollinations-mcp/` (pnpm; `node_modules` restaurado con `pnpm install`) |
-| Config | El repo trae su propio `opencode.json` (raíz) → `mcp.pollinations` con ruta RELATIVA: funciona tras clonar sin tocar configs globales. La config global de Sergio sigue existiendo y la orquestadora la actualiza aparte |
+| Config | El repo trae su propio `opencode.json` (raíz) → `mcp.pollinations` con ruta RELATIVA: funciona tras clonar sin tocar configs globales. La config global del desarrollador sigue existiendo y la orquestadora la actualiza aparte |
 | Uso | Herramientas MCP del servidor: generación de imágenes con `transparent: true` para sprites recortados, escenarios/backgrounds, audio |
 | Costo | Gratis; anónimo con rate-limit; key `sk_` gratis en enter.pollinations.ai desbloquea todos los modelos (0 Pollen) |
 | Notas | Nombre correcto: `@pollinations/mcp` (`@pollinations_ai/mcp` NO existe, 404) |
@@ -47,7 +47,7 @@ opciones pesadas disponibles bajo demanda. Todo gratis.
 ### 4.1 freesound.org — 600k+ SFX reales (API)
 
 - MCP: `MuShan-bit/freesound-mcp` — herramientas `freesound_search` / `freesound_download`.
-- Requiere: API key GRATIS en https://freesound.org/apiv2/apply (proceso manual de Sergio).
+- Requiere: API key GRATIS en https://freesound.org/apiv2/apply (proceso manual del desarrollador).
 - Config: MCP local con env `FREESOUND_API_KEY=<key>`.
 - Uso: cuando se necesiten SFX reales licenciados (foley, ambientes, voces) que el stack base no cubre.
 - El comando de instalación exacto no está verificado: investigar en el momento de instalar.

@@ -15,14 +15,14 @@ Viajan CON el repo en `.opencode/skills/` (autocargadas por opencode vía
 | `godot-shader-lab` | Shaders 2D, CanvasItem, partículas |
 | `level-designer` | Campañas y niveles como datos (.tres) — **NO viaja en el repo**: es un agente del hub de Metis (ver abajo) |
 
-## Capacidades del entorno de Metis (sesiones de Sergio)
+## Capacidades del entorno de Metis (sesiones del orquestador)
 
-La orquestación en las sesiones de Sergio usa el hub de Metis: investigación
+La orquestación en las sesiones usa el hub de Metis: investigación
 (`deep-research`), orquestación (`orchestrator`), creación de skills
 (`skill-creator`/`skill-forge`), documentación del motor por versión (MCP
 Context7), SDD y RDD — referenciadas en CLAUDE.md, sección "Skills del
 orquestador". También el agente `level-designer` (niveles como datos) vive en
-Metis y se invoca desde las sesiones de Sergio, no desde el clon. Estas
+Metis y se invoca desde las sesiones, no desde el clon. Estas
 capacidades NO viajan en el repo; viven en el entorno del que las mantiene.
 
 ## Habilidades propias del proyecto
