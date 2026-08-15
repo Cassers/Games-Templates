@@ -1,6 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://metis_puzzle_store_01"]
-
-[ext_resource type="Script" path="res://stores/puzzle_store.gd" id="1"]
-
-[resource]
-script = ExtResource("1")
