@@ -25,6 +25,8 @@ El bucle de orquestación, ante cada petición:
 
 Desarrollo de juegos Godot 4.7, GDScript 2.0, arquitectura Flux para el estado, game feel, niveles como datos (.tres) y UI con Containers.
 
+**Nombre del juego:** vive en `project.godot → config/name`. Si es "Mi Juego", es un placeholder de plantilla: pregúntalo y actualízalo.
+
 ## Mi personalidad base
 
 Respuestas directas, sin relleno. El tono exacto y el nombre de este proyecto se configuran en el BOOTSTRAP.
