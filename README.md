@@ -6,21 +6,23 @@ el estado, **niveles como datos**, memoria **ME/** para la IA orquestadora y
 **herramientas de assets** integradas para generar sprites, escenarios y
 sonido sin depender de nada externo de pago.
 
-## Ramas por género
+## Ramas
 
-`main` es la base genérica. Cada género vive en una rama:
+`main` es la base genérica (jugador 8 direcciones + HUD) y ya integra el
+**núcleo transversal de level design**: los niveles son datos (`.tres` +
+`LevelData` + `LevelBuilder` genérico + `LevelStore` con Flux), listo para
+usarse en CUALQUIER género. El level design no es un género: es una forma de
+trabajar que todas las ramas heredan desde la base.
 
-- `platformer` — nivel con suelo y plataformas, salto con coyote time y jump buffer
-- `topdown` — sala cerrada, movimiento en 8 direcciones
-- `shooter` — apuntar con ratón, disparar balas con enfriamiento
-- `roguelike` — mazmorra generada con código
-- `puzzle` — tablero 3×3 clicable, estado en Flux
-- `leveldesign` — los niveles son datos: `.tres` + `LevelBuilder` genérico + progreso con Flux
+- `platformer` — ejemplo 2D de plataformas: salto con coyote time y jump buffer
 
-Clonar una rama concreta:
+Por ahora solo existen `main` y `platformer`. El resto de géneros (top-down,
+shooter, roguelike, puzzle) se añaden bajo demanda como ramas; sus starters se
+conservan en la historia del repo.
 
 ```bash
 git clone -b platformer https://github.com/Cassers/Games-Templates.git
+git clone https://github.com/Cassers/Games-Templates.git              # base
 ```
 
 ## Requisitos
