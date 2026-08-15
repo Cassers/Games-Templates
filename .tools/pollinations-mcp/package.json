@@ -5,5 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node node_modules/@pollinations/mcp/pollinations-mcp.js"
+  },
+  "dependencies": {
+    "@pollinations/mcp": "^2.4.0"
   }
 }
